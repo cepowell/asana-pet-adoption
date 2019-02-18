@@ -4,31 +4,38 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="assets/styles/site.css" />
-        <script src="assets/js/index.js" type="module"></script>
+        <link href="https://fonts.googleapis.com/css?family=Poiret+One|Roboto+Condensed" rel="stylesheet">
         <title>My Application</title>
     </head>
     <body>
 
       <div id="gallery">
         <header class="site-header">
-          <h1>Puppy image gallery</h1>
+          <h1> Dogs for Adoption </h1>
           <blockquote class="site-header__quote">
-            <p>A dog will teach you unconditional love. If you can have that in your life, things won't be too bad.</p>
+            <p>
+              A dog will teach you unconditional love. If you can have that in your life, things won't be too bad.
+            </p>
             <cite>&mdash;Robert Wagner</cite>
           </blockquote>
         </header>
 
         <div id="dog-list" class="main"></div>
 
-
         <footer class="site-footer">
-          <p>Built by a wonderful developer for Asana.</p>
+          Built by Cait Powell for Asana.
         </footer>
       </div>
 
       <div class="fullscreen-image-modal">
         <div class="fullscreen-image-modal-content"></div>
       </div>
+
+      <!-- include Interaction Observer polyfill to guarantee lazy loading on all browsers -->
+      <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+
+      <!-- load main application JavaScript file -->
+      <script src="assets/js/index.js" type="module"></script>
 
     </body>
 </html>

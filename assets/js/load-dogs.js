@@ -11,6 +11,20 @@ const loadDogsFromJSON = (callback) => {
 }
 
 const createHTMLElements = (dogs) => {
+  let frag = document.createDocumentFragment();
+  dogs.map(dog => {
+    const id = dogs.indexOf(dog);
+    const dogMarkup = `
+      <img alt="image of dog number ${id}" data-src=${dog.image}/>
+    `;
+    const wrapperElement = document.createElement("A");
+    wrapperElement.setAttribute("id", `dog-image-${id}`);
+    wrapperElement.innerHTML = dogMarkup;
+    frag.appendChild(wrapperElement);
+  });
+  document.getElementById('dog-list').appendChild(frag);
+  let event = new Event('dogsLoaded');
+  document.dispatchEvent(event);
 
 }
 
@@ -18,18 +32,7 @@ const loadDogHTML = () => {
   loadDogsFromJSON(response => {
     const jsonResponse = JSON.parse(response);
     const { dogs } = jsonResponse;
-    let frag = document.createDocumentFragment();
-    dogs.map(dog => {
-      const id = dogs.indexOf(dog);
-      const dogMarkup = `
-        <img alt="image of dog number ${id}" src=${dog.image} />
-      `;
-      const wrapperElement = document.createElement("A");
-      wrapperElement.setAttribute("id", `dog-image-${id}`);
-      wrapperElement.innerHTML = dogMarkup;
-      frag.appendChild(wrapperElement);
-    });
-    document.getElementById('dog-list').appendChild(frag);
+    createHTMLElements(dogs);
   });
 }
 
