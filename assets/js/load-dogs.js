@@ -10,6 +10,10 @@ const loadDogsFromJSON = (callback) => {
    xobj.send(null);
 }
 
+const createHTMLElements = (dogs) => {
+
+}
+
 const loadDogHTML = () => {
   loadDogsFromJSON(response => {
     const jsonResponse = JSON.parse(response);

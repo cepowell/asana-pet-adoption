@@ -1,5 +1,12 @@
 import loadDogHTML from './load-dogs.js';
+import handleLightbox from './lightbox.js';
 
-document.addEventListener("DOMContentLoaded", function() {
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
+    loadDogHTML();
+    handleLightbox();
+  });
+} else {
   loadDogHTML();
-});
+  handleLightbox();
+}
