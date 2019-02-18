@@ -1,19 +1,25 @@
 {
   "name": "asana-pet-shelter",
   "version": "1.0.0",
-  "description": "Asana pet shelter",
+  "description": "Asana pet adoption website.",
+  "author": "Cait Powell",
+  "license": "ISC",
+  "repository": "https://github.com/cepowell/asana-pet-adoption.git",
   "main": "index.js",
   "scripts": {
     "eslint": "eslint assets/js/**.js",
-    "start": "npm run eslint && npm run stylelint && node_modules/http-server/bin/http-server",
+    "minify-css": "cleancss -o assets/styles/site.min.css assets/styles/site.css",
+    "minify-js": "uglifyjs assets/js/index.js -o assets/js/app.min.js",
+    "start": "npm run eslint && npm run stylelint && npm run minify-js && npm run minify-css && node_modules/http-server/bin/http-server",
     "stylelint": "stylelint assets/styles/site.css"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
+    "clean-css-cli": "^4.2.1",
     "eslint": "^5.14.1",
     "http-server": "^0.11.1",
     "stylelint": "^9.10.1",
-    "stylelint-config-standard": "^18.2.0"
+    "stylelint-config-standard": "^18.2.0",
+    "uglify-es": "^3.3.9",
+    "uglify-js": "^3.4.9"
   }
 }
