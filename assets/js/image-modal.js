@@ -2,7 +2,7 @@ let modal = document.querySelector(".fullscreen-image-modal");
 let modalContent = document.querySelector(".fullscreen-image-modal-content");
 let gallery = document.getElementById("gallery");
 
-const openLightbox = (target) => {
+const openModal = (target) => {
   gallery.classList.add('modal-open');
   document.body.classList.add('stop-scroll');
   const modalImage = document.createElement("IMG");
@@ -14,7 +14,7 @@ const openLightbox = (target) => {
   modalContent.appendChild(modalImage);
 }
 
-const closeLightbox = () => {
+const closeModal = () => {
   gallery.classList.remove('modal-open');
   document.body.classList.remove('stop-scroll');
   modal.classList.remove('show-fullscreen-image-modal');
@@ -22,14 +22,14 @@ const closeLightbox = () => {
   modalContent.removeChild(currentImage);
 }
 
-const handleLightbox = () => {
+const handleModal = () => {
   document.body.addEventListener("click", e => {
     e.stopPropagation();
     if (modal.classList.contains('show-fullscreen-image-modal')) {
-      closeLightbox();
+      closeModal();
     } else {
       if (e.target.tagName === 'IMG') {
-        openLightbox(e.target);
+        openModal(e.target);
       }
     }
   });
@@ -37,9 +37,9 @@ const handleLightbox = () => {
   document.body.addEventListener("keydown", e => {
     e.stopPropagation();
     if (e.which === 27 && modal.classList.contains('show-fullscreen-image-modal')) {
-      closeLightbox();
+      closeModal();
     }
   });
 }
 
-export default handleLightbox;
+export default handleModal;
