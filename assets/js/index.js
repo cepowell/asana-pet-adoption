@@ -1,8 +1,8 @@
 import loadDogHTML from './load-dogs.js';
 import handleModal from './image-modal.js';
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", () => {
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
     loadDogHTML();
     handleModal();
   });
@@ -11,30 +11,34 @@ if (document.readyState === "loading") {
   handleModal();
 }
 
-document.addEventListener("dogsLoaded", event => {
-  console.log('loaded');
-  var images = document.querySelectorAll('[data-src]');
+// The following code implements lazy loading. When all dog elements have been created
+// and appended to the DOM, their data-src attributes will be converted to src attributes
+// only when they enter the viewport. It's important to listen for the dogsLoaded event
+// rather than the usual DOMContentLoaded event, because the dog elements are being added
+// dynamically and may not have been added to the DOM when the DOM itself is ready
+
+document.addEventListener('dogsLoaded', event => {
+  const images = document.querySelectorAll('[data-src]');
   createObserver(images);
 }, false);
 
-function createObserver(images) {
-  var options = {
+const createObserver = (images) => {
+  const options = {
     root: null,
     rootMargin: "0px",
     threshold: .02
   };
-  var observer = new IntersectionObserver(handleIntersect, options);
-  images.forEach(function (image) {
+  const observer = new IntersectionObserver(handleIntersect, options);
+  images.forEach(image => {
     observer.observe(image);
   });
-
 }
 
-function handleIntersect(entries, observer) {
-  entries.forEach(function (entry) {
+const handleIntersect = (entries, observer) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
-      var image = entry.target;
-      var url = image.getAttribute('data-src');
+      const image = entry.target;
+      const url = image.getAttribute('data-src');
       image.setAttribute('src', url);
       observer.unobserve(entry.target);
     }

@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="assets/styles/site.css" />
         <link href="https://fonts.googleapis.com/css?family=Poiret+One|Roboto+Condensed" rel="stylesheet">
-        <title>My Application</title>
+        <title>Asana Pet Adoption</title>
     </head>
     <body>
-
       <div id="gallery">
+
         <header class="site-header">
           <h1> Dogs for Adoption </h1>
           <blockquote class="site-header__quote">
@@ -20,13 +20,16 @@
           </blockquote>
         </header>
 
+        <!-- div where images of dogs will be dynamically loaded -->
         <div id="dog-list" class="main"></div>
 
         <footer class="site-footer">
           Built by Cait Powell for Asana.
         </footer>
+
       </div>
 
+      <!-- div where fullscreen image will be dynamically added to the modal -->
       <div class="fullscreen-image-modal">
         <div class="fullscreen-image-modal-content"></div>
       </div>
@@ -34,8 +37,6 @@
       <!-- include Interaction Observer polyfill to guarantee lazy loading on all browsers -->
       <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
 
-      <!-- load main application JavaScript file -->
       <script src="assets/js/index.js" type="module"></script>
-
     </body>
 </html>
