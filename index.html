@@ -1,65 +1,67 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Asana Pet Adoption</title>
 
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <title>Asana Pet Adoption</title>
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-        <link rel="manifest" href="/assets/images/site.webmanifest">
-        <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="shortcut icon" href="/assets/images/favicon.ico">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="msapplication-config" content="/assets/images/browserconfig.xml">
-        <meta name="theme-color" content="#ffffff">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <!-- SEO meta tags -->
-        <meta name="keywords" content="pet adoption, pet shelter, dog adoption" />
-        <meta name="description" content="Adopt dogs and other pets with Asana! We partner with shelters to help animals find their homes." />
-        <meta property="og:title" content="Asana Pet Adoption" />
-        <meta property="og:description" content="Adopt dogs and other pets with Asana! We partner with shelters to help animals find their homes." />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/site.webmanifest">
+  <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/assets/images/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
 
-        <!-- the following two tags are for use when the site is live -->
-        <!-- <meta property="og:url" content="<live-url-here>" /> -->
-        <!-- <meta name="google-site-verification" content="<verification-code-here" /> -->
+  <!-- SEO meta tags -->
+  <meta name="keywords" content="pet adoption, pet shelter, dog adoption" />
+  <meta name="description" content="Adopt dogs and other pets with Asana! We partner with shelters to help animals find their homes." />
+  <meta property="og:title" content="Asana Pet Adoption" />
+  <meta property="og:description" content="Adopt dogs and other pets with Asana! We partner with shelters to help animals find their homes." />
 
-        <link rel="stylesheet" href="assets/styles/site.css" />
-        <link href="https://fonts.googleapis.com/css?family=Poiret+One|Roboto+Condensed" rel="stylesheet">
-    </head>
+  <!-- the following two tags are for use when the site is live -->
+  <!-- <meta property="og:url" content="<live-url-here>" /> -->
+  <!-- <meta name="google-site-verification" content="<verification-code-here" /> -->
 
-    <body>
-      <div id="gallery">
+  <link rel="stylesheet" href="assets/styles/site.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poiret+One|Roboto+Condensed" rel="stylesheet">
+</head>
 
-        <header class="site-header">
-          <h1> Dogs for Adoption </h1>
-          <blockquote class="site-header__quote">
-            <p>
-              A dog will teach you unconditional love. If you can have that in your life, things won't be too bad.
-            </p>
-            <cite>&mdash;Robert Wagner</cite>
-          </blockquote>
-        </header>
+<body>
+  <div id="gallery">
 
-        <!-- div where images of dogs will be dynamically loaded -->
-        <div id="dog-list" class="main"></div>
+    <header class="site-header">
+      <h1> Dogs for Adoption </h1>
+      <blockquote class="site-header__quote">
+        <p>
+          A dog will teach you unconditional love. If you can have that in your life, things won't be too bad.
+        </p>
+        <cite>&mdash;Robert Wagner</cite>
+      </blockquote>
+    </header>
 
-        <footer class="site-footer">
-          Built by Cait Powell for Asana.
-        </footer>
+    <!-- div where images of dogs will be dynamically loaded -->
+    <div id="dog-list" class="main"></div>
 
-      </div>
+    <footer class="site-footer">
+      Built by Cait Powell for Asana.
+    </footer>
 
-      <!-- div where fullscreen image will be dynamically added to the modal -->
-      <div class="fullscreen-image-modal">
-        <div class="fullscreen-image-modal-content"></div>
-      </div>
+  </div>
 
-      <!-- include Interaction Observer polyfill to guarantee lazy loading on all browsers -->
-      <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+  <!-- div where fullscreen image will be dynamically added to the modal -->
+  <div class="fullscreen-image-modal">
+    <div class="fullscreen-image-modal-content"></div>
+  </div>
 
-      <script src="assets/js/index.js" type="module"></script>
-    </body>
+  <!-- include Interaction Observer polyfill to guarantee lazy loading on all browsers -->
+  <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+
+  <script src="assets/js/index.js" type="module"></script>
+</body>
+
 </html>

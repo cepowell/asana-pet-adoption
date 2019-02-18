@@ -17,7 +17,7 @@ if (document.readyState === 'loading') {
 // rather than the usual DOMContentLoaded event, because the dog elements are being added
 // dynamically and may not have been added to the DOM when the DOM itself is ready
 
-document.addEventListener('dogsLoaded', event => {
+document.addEventListener('dogsLoaded', () => {
   const images = document.querySelectorAll('[data-src]');
   createObserver(images);
 }, false);

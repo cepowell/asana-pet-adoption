@@ -4,11 +4,16 @@
   "description": "Asana pet shelter",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/http-server/bin/http-server"
+    "eslint": "eslint assets/js/**.js",
+    "start": "npm run eslint && npm run stylelint && node_modules/http-server/bin/http-server",
+    "stylelint": "stylelint assets/styles/site.css"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "http-server": "^0.11.1"
+    "eslint": "^5.14.1",
+    "http-server": "^0.11.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0"
   }
 }
