@@ -1,0 +1,14 @@
+{
+  "name": "asana-pet-shelter",
+  "version": "1.0.0",
+  "description": "Asana pet shelter",
+  "main": "index.js",
+  "scripts": {
+    "start": "sudo npm install -g http-server && http-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
